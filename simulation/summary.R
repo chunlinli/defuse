@@ -28,10 +28,3 @@ df <- df %>%
     )
 
 kable(df) %>% kable_styling(latex_options = "striped")
-
-
-x <- rnorm(500)
-y <- exp(-x^2/4) #+ rnorm(500)
-
-hist(y, breaks = 100, main = "Histogram of y", xlab = "y", ylab = "Frequency")
-qqnorm(y)
