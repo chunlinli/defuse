@@ -83,7 +83,7 @@ The code is maintained in github
 This project is in development -- the ultimate goal is to 
 
 Implementing the structure learning algorithms is error-prone. 
-If you spot any error, please file an issue [here](https://github.com/chunlinli/defuse/issues) or contact me via [email](li000007@umn.edu) -- 
+If you spot any error, please file an issue [here](https://github.com/chunlinli/defuse/issues) or contact me via [email](mailto:li000007@umn.edu) -- 
 I will be grateful to be informed.
 
 ## References
