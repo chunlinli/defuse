@@ -29,24 +29,32 @@ The implementation of DeFuSE is in directory  `./defuse`.
 
 The code of full simulations (inclusing other methods) is in directory `./simulation`. 
 
+- `./simulation/data.py`: simulates data.
+
+- `./simulation/defuse_simulation.py`: conducts simulations for DeFuSE.
+
+- `./simulation/notears_simulation.py`: conducts simulations for NOTEARS [2].
+
+- `./simulation/simulation.R`: conducts simulations for CAM [3], RFCI [4], and LRpS-GES [1].
+
 - `./simulation/Python`: 
 
-    - `./simulation/Python/notears`: contains an implementation of NOTEARS [2].
+    - `./simulation/Python/notears`: contains an implementation of NOTEARS. 
 
 - `./simulation/R`: 
 
-    - `./simulation/R/methods`: contains R files defining a unified interface for CAM [3], RFCI [4], and LRpS-GES [1]. 
+    - `./simulation/R/methods`: contains R files defining a unified interface for CAM, RFCI, and LRpS-GES. 
 
     - `utils.R`: defines utility functions, including graph metrics. 
 
-- `./simulation/results`:
+- `./simulation/data`: stores simulated data.
 
-    - 
+- `./simulation/results`: stores the simulation results. 
 
 ## Preliminaries
 ### Environments
 
-For Python, use conda to create an environment.
+For Python, use conda to create an environment named `defuse`.
 ```bash
 git clone https://github.com/chunlinli/defuse.git
 cd defuse
@@ -54,6 +62,19 @@ conda env create -f environment.yml
 conda activate defuse
 ```
 
+### Install DeFuSE
+
+To install DeFuSE, run the following Bash script.
+```bash
+conda develop defuse
+```
+
+### Install other packages
+
+To install NOTEARS, run the following Bash script.
+```bash
+conda develop simulation/Python/notears
+```
 For R, the version is 4.1.1 and the following packages are used. 
 ```r
 pkg <- c(
@@ -61,14 +82,6 @@ pkg <- c(
     "dplyr","tidyr","progress","ggplot2","tidyverse","glue","scales","kableExtra" # suggested
 )
 install.packages(pkg)
-```
-
-### Install DeFuSE as a standalone Python package
-
-To install DeFuSE, 
- 
-```bash
-
 ```
 
 ### System information 
@@ -82,14 +95,6 @@ Memory:                     528 GB
 ```
 No GPU is required.
 
-The R code is tested on an Apple M1 Mac 2020 with specs:
-```
-System Version:	            macOS 12.3.1 (21E258) Darwin 21.4.0
-Chip:	                    Apple M1
-Total Number of Cores:	    8 
-Memory:	                    16 GB
-```
-
 ## Usage
 
 
@@ -98,10 +103,18 @@ For DeFuSE simulations, run the following notebooks.
 
 - `./example_small.ipynb` takes roughly 3 hrs to run.
 
-- `./example_large.ipynb` takes roughly 12 hrs to run. 
+- `./example_large.ipynb` takes roughly 14 hrs to run. 
 
-For complete simulations, 
-
+For complete simulations, first run the following script to generate data.
+```
+python simulation/data.py
+```
+Then run the following scripts.
+```bash
+python simulation/defuse_simulation.py
+python simulation/notears_simulation.py
+Rscript simulation/simulation.R
+```
 NOTE: the complete simulations will take more than 100 hrs to complete.
 
 ## Citing information
