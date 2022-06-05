@@ -1,0 +1,11 @@
+Model Name:	Mac mini
+  Model Identifier:	Macmini9,1
+  Chip:	Apple M1
+  Total Number of Cores:	8 (4 performance and 4 efficiency)
+  Memory:	16 GB
+  System Firmware Version:	7459.101.3
+  OS Loader Version:	7459.101.3
+  Serial Number (system):	H2WGF0ABQ6NY
+  Hardware UUID:	B3982647-C9B8-5F11-8F39-5B5F5FB48A3C
+  Provisioning UDID:	00008103-0002444C1440801E
+  Activation Lock Status:	Enabled
