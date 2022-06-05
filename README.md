@@ -6,53 +6,49 @@ This repository contains an implementation of the following paper
 
 The method is named **De**confounded **Fu**nctional **S**tructure **E**stimation (DeFuSE).
 
-![DeFuSE](defuse.jpg)
-
-
-A brief introduction to DeFuSE.
-
-
-
 ## Contents
 
-### DeFuSE code
+The implementation of DeFuSE is in `./defuse`.
 
-### Simulations
+The simulations of DeFuSE is in notebooks `./` and `./`
 
-
-### Real Data
-
+The code of full simulations (inclusing other methods) is in `./simulation`. 
 
 
 ## Preliminaries
 
 ### DeFuSE as a standalone Python package
 
+To install DeFuSE, 
 
 
 
 
-
-### Python requirements for simulation
+### Python requirements for simulations
 
 conda environment file 
 
-
 The Python code is tested on a server with specs:
+```
+System Version:             Ubuntu 18.04.6 LTS 4.15.0-176-generic x86_64
+Model name:                 Intel(R) Xeon(R) Gold 5218 CPU @ 2.30GHz
+Total Number of Cores:      64
+Memory:                     528 GB
+```
+No GPU is required.
 
-
-
-### R requirements for simulation
+### R requirements for simulations
 
 You need to install R packages `bnlearn`, `CAM`, `lrpsadmm`, and `pcalg`.
 
+
 The R code is tested on an Apple M1 Mac 2020 with specs:
-
-
-
-
-
-
+```
+System Version:	            macOS 12.3.1 (21E258) Darwin 21.4.0
+Chip:	                    Apple M1
+Total Number of Cores:	    8 
+Memory:	                    16 GB
+```
 
 ## Usage
 
@@ -74,13 +70,16 @@ NOTE: the complete simulations will take more than 100 hrs to complete.
 
 If you find the code useful, please consider citing 
 ```
-
+@article{
+    author={Chunlin Li, Xiaotong Shen, Wei Pan},
+    title={Nonlinear causal discovery with confounders},
+    year={2022}
+}
 ```
 
 
-The code is maintained in github
-
-This project is in development -- the ultimate goal is to 
+The code is maintained on [GitHub](https://github.com/chunlinli/defuse). 
+This project is in development.
 
 Implementing the structure learning algorithms is error-prone. 
 If you spot any error, please file an issue [here](https://github.com/chunlinli/defuse/issues) or contact me via [email](mailto:li000007@umn.edu) -- 
