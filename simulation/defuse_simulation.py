@@ -29,9 +29,11 @@ for graph_type in graph_types:
         for sim in range(num_simulations):
             X = pd.read_csv(
                 f'simulation/data/{graph_type}_{d}_X{sim}.csv', header=None).to_numpy()
+            
             m = Defuse()
             A_est, _ = m.fit(X, verbose=False)
             result = count_accuracy(A, A_est)
+            
             results['p'].append(d)
             results['graph'].append(graph_type)
             results['n'].append(n)
