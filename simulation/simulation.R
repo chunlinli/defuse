@@ -82,7 +82,7 @@ simulator <- function(p_seq = c(30, 100),
                         graph_type,
                         "_",
                         p,
-                        "_X", sim-1, ".csv"
+                        "_X", sim - 1, ".csv"
                     ), header = FALSE)
 
                     for (method in methods_seq) {
@@ -136,4 +136,9 @@ simulator <- function(p_seq = c(30, 100),
     }
 }
 
-simulator(p_seq = c(30, 100),graphs_seq = c("random", "hub"),methods_seq = c("CAM", "RFCI"), num_simulation = 50)
+simulator(
+    p_seq = c(30, 100),
+    graphs_seq = c("random", "hub"),
+    methods_seq = c("CAM", "RFCI"),
+    num_simulation = 50
+)
