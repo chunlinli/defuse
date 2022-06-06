@@ -8,25 +8,83 @@ The method is named **De**confounded **Fu**nctional **S**tructure **E**stimation
 
 ## Contents
 
-The implementation of DeFuSE is in `./defuse`.
+The simulations of DeFuSE are in Jupyter Notebooks:
 
-The simulations of DeFuSE is in notebooks `./` and `./`
+- `./example_small.ipynb`: 50 simulations (random and hub graphs) when `p, n = 30, 500`.
 
-The code of full simulations (inclusing other methods) is in `./simulation`. 
+- `./example_large.ipynb`: 50 simulations (random and hub graphs) when `p, n = 100, 500`.
 
+The implementation of DeFuSE is in directory  `./defuse`.
+
+- `./defuse/defuse.py`: defines `DeFuSE` class.
+
+- `./defuse/defusenet.py`: defines neural network structures, including `MLP` class and `AMLP` (additive MLP) class.
+
+- `./defuse/feature.py`: defines functions for feature selection.
+
+- `./defuse/trainer.py`: defines `Trainer` class.
+
+- `./defuse/utils.py`: defines utility functions, including graph and data generating functions.
+
+
+The code of full simulations (inclusing other methods) is in directory `./simulation`. 
+
+- `./simulation/data.py`: simulates data.
+
+- `./simulation/defuse_simulation.py`: conducts simulations for DeFuSE.
+
+- `./simulation/notears_simulation.py`: conducts simulations for NOTEARS [2].
+
+- `./simulation/simulation.R`: conducts simulations for CAM [3], RFCI [4], and LRpS-GES [1].
+
+- `./simulation/Python`: 
+
+    - `./simulation/Python/notears`: contains an implementation of NOTEARS. 
+
+- `./simulation/R`: 
+
+    - `./simulation/R/methods`: contains R files defining a unified interface for CAM, RFCI, and LRpS-GES. 
+
+    - `utils.R`: defines utility functions, including graph metrics. 
+
+- `./simulation/data`: stores simulated data.
+
+- `./simulation/results`: stores the simulation results. 
 
 ## Preliminaries
+### Environments
 
-### DeFuSE as a standalone Python package
+For Python, use conda to create an environment named `defuse`.
+```bash
+git clone https://github.com/chunlinli/defuse.git
+cd defuse
+conda env create -f environment.yml
+conda activate defuse
+```
 
-To install DeFuSE, 
+### Install DeFuSE
 
+To install DeFuSE, run the following Bash script.
+```bash
+conda develop defuse
+```
 
+### Install other packages
 
+To install NOTEARS, run the following Bash script.
+```bash
+conda develop simulation/Python/notears
+```
+For R, the version is 4.1.1 and the following packages are used. 
+```r
+pkg <- c(
+    "CAM","lrpsadmm","pcalg","bnlearn","mvtnorm", # required
+    "dplyr","tidyr","progress","ggplot2","tidyverse","glue","scales","kableExtra" # suggested
+)
+install.packages(pkg)
+```
 
-### Python requirements for simulations
-
-conda environment file 
+### System information 
 
 The Python code is tested on a server with specs:
 ```
@@ -37,47 +95,38 @@ Memory:                     528 GB
 ```
 No GPU is required.
 
-### R requirements for simulations
-
-You need to install R packages `bnlearn`, `CAM`, `lrpsadmm`, and `pcalg`.
-
-
-The R code is tested on an Apple M1 Mac 2020 with specs:
-```
-System Version:	            macOS 12.3.1 (21E258) Darwin 21.4.0
-Chip:	                    Apple M1
-Total Number of Cores:	    8 
-Memory:	                    16 GB
-```
-
 ## Usage
 
 
 
-or you can try quick examples 
+For DeFuSE simulations, run the following notebooks.
 
-roughly 1 hrs to complete
+- `./example_small.ipynb` takes roughly 3 hrs to run.
 
+- `./example_large.ipynb` takes roughly 14 hrs to run. 
 
-
-For complete simulations, 
-
-
+For complete simulations, first run the following script to generate data.
+```
+python simulation/data.py
+```
+Then run the following scripts.
+```bash
+python simulation/defuse_simulation.py
+python simulation/notears_simulation.py
+Rscript simulation/simulation.R
+```
 NOTE: the complete simulations will take more than 100 hrs to complete.
-
 
 ## Citing information
 
 If you find the code useful, please consider citing 
 ```
 @article{
-    author={Chunlin Li, Xiaotong Shen, Wei Pan},
-    title={Nonlinear causal discovery with confounders},
-    year={2022}
+    author = {Chunlin Li, Xiaotong Shen, Wei Pan},
+    title = {Nonlinear causal discovery with confounders},
+    year = {2022}
 }
 ```
-
-
 The code is maintained on [GitHub](https://github.com/chunlinli/defuse). 
 This project is in development.
 
@@ -113,5 +162,5 @@ In addition, part of the simulation code is adapted from
 and 
 [Zheng's code](https://github.com/xunzheng/notears).
 
-I would like to thank the authors of above open-sourced softwares.
+**I would like to thank the authors of above open-sourced softwares.**
 

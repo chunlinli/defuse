@@ -10,33 +10,44 @@ packages <- c(
 )
 invisible(lapply(packages, library, character.only = TRUE))
 
-simulator <- function(p_seq = c(25),
+simulator <- function(p_seq = c(30),
                       graphs_seq = c("random", "hub"),
-                      n_seq = c(500, 1000, 1500),
+                      n_seq = c(500),
                       methods_seq = c("CAM", "RFCI", "LRpS-GES"),
-                      num_simulation = 100, seed = 1110) {
+                      num_simulation = 50, seed = 1110) {
     set.seed(seed)
 
-    source_files <- list.files("R/", "*.R$")
-    invisible(lapply(paste0("R/", source_files), source))
+    source_files <- list.files("simulation/R/", "*.R$")
+    invisible(lapply(paste0("simulation/R/", source_files), source))
 
-    source_files <- list.files("R/methods/", "*.R$")
-    invisible(lapply(paste0("R/methods/", source_files), source))
+    source_files <- list.files("simulation/R/methods/", "*.R$")
+    invisible(lapply(paste0(
+        "simulation/R/methods/",
+        source_files
+    ), source))
 
-    source_files <- list.files("R/methods/utils/", "*.R$")
-    invisible(lapply(paste0("R/methods/utils/", source_files), source))
+    source_files <- list.files("simulation/R/methods/utils/", "*.R$")
+    invisible(lapply(paste0(
+        "simulation/R/methods/utils/",
+        source_files
+    ), source))
 
-    res_dir <- "simulation/result"
+    res_dir <- "simulation/results"
     if (!dir.exists(res_dir)) dir.create(res_dir)
 
-    result_file <- "cam_ges_fci.csv"
+    result_file <- "results.csv"
     if (file.exists(result_file)) file.remove(result_file)
 
     result <- c()
 
     for (p in p_seq) {
         for (graph_type in graphs_seq) {
-            u <- graph_generator(p, graph_type)
+
+            # read
+
+
+
+
             for (n in n_seq) {
                 cat(sprintf(
                     "p = %d, graph_type = %s, n = %d\n",
@@ -60,7 +71,12 @@ simulator <- function(p_seq = c(25),
 
                 for (sim in seq_len(num_simulation)) {
                     pb$tick()
-                    y <- data_generator(u, n)$y
+
+
+
+                    # read data
+
+
 
                     for (method in methods_seq) {
 
@@ -70,7 +86,7 @@ simulator <- function(p_seq = c(25),
                             method = method
                         )
                         res <- metrics(u, out$u)
-                        
+
                         FDR <- res$FDR
                         FPR <- res$FPR
                         TPR <- res$TPR
