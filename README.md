@@ -83,7 +83,7 @@ pkg <- c(
 )
 install.packages(pkg)
 ```
-NOTE: some packages have dependencies unavailable from CRAN. 
+NOTE: some packages have dependencies unavailable from CRAN. The user may need to install them manually.
 
 ### System information 
 
