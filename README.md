@@ -87,7 +87,7 @@ NOTE: some packages have dependencies unavailable from CRAN.
 
 ### System information 
 
-The Python code is tested on a server with specs:
+The code is tested on a server with specs:
 ```
 System Version:             Ubuntu 18.04.6 LTS 4.15.0-176-generic x86_64
 Model name:                 Intel(R) Xeon(R) Gold 5218 CPU @ 2.30GHz
