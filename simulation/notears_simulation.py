@@ -35,6 +35,7 @@ for graph_type in graph_types:
             model = NotearsMLP(dims=[d, 10, 1], bias=True)
             A_est = notears_nonlinear(model, X, lambda1=0.1, lambda2=0.1)
             result = count_accuracy(A, A_est != 0)
+            
             results['p'].append(d)
             results['graph'].append(graph_type)
             results['n'].append(n)

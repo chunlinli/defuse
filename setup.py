@@ -7,4 +7,5 @@ setup(name='defuse',
       author_email='li000007@umn.edu',
       url='https://github.com/chunlinli/defuse',
       packages=['defuse',],
+      package_dir={'defuse': 'defuse'},
      )
