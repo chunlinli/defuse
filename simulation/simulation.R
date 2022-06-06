@@ -136,4 +136,4 @@ simulator <- function(p_seq = c(30, 100),
     }
 }
 
-simulator(p_seq = c(30),graphs_seq = c("random", "hub"),methods_seq = c("CAM", "RFCI", "LRpS-GES"), num_simulation = 50)
+simulator(p_seq = c(30, 100),graphs_seq = c("random", "hub"),methods_seq = c("CAM", "RFCI"), num_simulation = 50)
