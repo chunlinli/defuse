@@ -2,9 +2,9 @@ import torch
 import numpy as np
 from sklearn.linear_model import LassoLarsIC
 from scipy.stats import anderson
-from defuse.feature import feature_list, feature_vector_score
-from defuse.trainer import DefuseTrainer
-from defuse.defusenet import DefuseNet
+from feature import feature_list, feature_vector_score
+from trainer import DefuseTrainer
+from defusenet import DefuseNet
 
 class Defuse:
     def __init__(self, model_config=None, train_config=None):
