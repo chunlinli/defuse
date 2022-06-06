@@ -113,8 +113,8 @@ python simulation/data.py
 Then run the following scripts.
 ```bash
 python simulation/defuse_simulation.py
-python simulation/notears_simulation.py
-Rscript simulation/simulation.R
+python simulation/notears_simulation.py # requires NOTEARS
+Rscript simulation/simulation.R         # requires other R packages
 ```
 NOTE: the complete simulations will take more than 100 hrs to complete.
 
