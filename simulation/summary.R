@@ -12,13 +12,7 @@ packages <- c(
 )
 invisible(lapply(packages, library, character.only = TRUE))
 
-df1 <- read.csv("simulation/result/RFCI.csv")
-df2 <- read.csv("simulation/result/CAM.csv")
-df3 <- read.csv("simulation/result/LRpS-GES.csv")
-df4 <- read.csv("simulation/result/LRpS-GES-0.csv")
-df <- rbind(df1, df2, df3, df4)
-
-
+df <- read.csv("simulation/results/results.csv")
 df <- df %>%
     group_by(p, graph, method) %>%
     summarise(
