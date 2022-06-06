@@ -10,7 +10,7 @@ packages <- c(
 )
 invisible(lapply(packages, library, character.only = TRUE))
 
-simulator <- function(p_seq = c(30),
+simulator <- function(p_seq = c(30, 100),
                       graphs_seq = c("random", "hub"),
                       n_seq = c(500),
                       methods_seq = c("CAM", "RFCI", "LRpS-GES"),
@@ -44,9 +44,13 @@ simulator <- function(p_seq = c(30),
         for (graph_type in graphs_seq) {
 
             # read
-
-
-
+            u <- read.csv(paste0(
+                "simulation/data/",
+                graph_type,
+                "_",
+                p,
+                "_A.csv"
+            ), header = FALSE)
 
             for (n in n_seq) {
                 cat(sprintf(
@@ -72,11 +76,14 @@ simulator <- function(p_seq = c(30),
                 for (sim in seq_len(num_simulation)) {
                     pb$tick()
 
-
-
                     # read data
-
-
+                    y <- read.csv(paste0(
+                        "simulation/data/",
+                        graph_type,
+                        "_",
+                        p,
+                        "_X", sim-1, ".csv"
+                    ), header = FALSE)
 
                     for (method in methods_seq) {
 
@@ -129,4 +136,4 @@ simulator <- function(p_seq = c(30),
     }
 }
 
-simulator()
+simulator(p_seq = c(30),graphs_seq = c("random", "hub"),methods_seq = c("CAM", "RFCI", "LRpS-GES"), num_simulation = 50)
