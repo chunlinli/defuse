@@ -103,7 +103,7 @@ For DeFuSE simulations, run the following notebooks.
 
 - `./example_small.ipynb` takes roughly 3 hrs to run.
 
-- `./example_large.ipynb` takes roughly 14 hrs to run. 
+- `./example_large.ipynb` takes roughly 12 hrs to run. 
 
 For complete simulations, first run the following script to generate data.
 ```
