@@ -73,7 +73,9 @@ python setup.py install
 
 To install NOTEARS, run the following Bash script.
 ```bash
-python simulation/Python/notears/setup.py install
+cd simulation/Python/notears
+python setup.py install
+cd ../../../ # bask to defuse directory 
 ```
 For R, the version is 4.1.1 and the following packages are used. 
 ```r

@@ -214,19 +214,7 @@ def count_accuracy(B_true, B_est):
 
 
 def main():
-
-    set_random_seed(1117)
-
-    d = 30
-    n = 500
-    A = simulate_dag(d, 'random')
-    _, cf, fn = simulate_data(A, n, 'poly-trig')
-
-
-    for i in range(50):
-        X, _, _ = simulate_data(A=A, n=n, sem_type='poly-trig', coefficient=cf, functions=fn)
-        np.savetxt('W_est.csv', W_est, delimiter=',')
-
+    pass
 
 
 if __name__ == '__main__':
