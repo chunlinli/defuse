@@ -66,7 +66,7 @@ conda activate defuse
 
 To install DeFuSE, run the following Bash script.
 ```bash
-python setup.py install
+pip install -e .
 ```
 
 ### Installing other packages
@@ -74,7 +74,7 @@ python setup.py install
 To install NOTEARS, run the following Bash script.
 ```bash
 cd simulation/Python/notears
-python setup.py install
+pip install -e .
 cd ../../../ # bask to defuse directory 
 ```
 For R, the version is 4.1.1 and the following packages are used. 
