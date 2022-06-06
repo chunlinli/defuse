@@ -62,14 +62,14 @@ conda env create -f environment.yml
 conda activate defuse
 ```
 
-### Install DeFuSE
+### Installing DeFuSE
 
 To install DeFuSE, run the following Bash script.
 ```bash
 python setup.py install
 ```
 
-### Install other packages
+### Installing other packages
 
 To install NOTEARS, run the following Bash script.
 ```bash
