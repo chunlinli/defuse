@@ -27,7 +27,7 @@ The implementation of DeFuSE is in directory  `./defuse`.
 - `./defuse/utils.py`: defines utility functions, including graph and data generating functions.
 
 
-The code of full simulations (inclusing other methods) is in directory `./simulation`. 
+The code of full simulations (including other methods) is in directory `./simulation`. 
 
 - `./simulation/data.py`: simulates data.
 
