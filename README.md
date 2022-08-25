@@ -6,6 +6,8 @@ This repository contains an implementation of the following paper
 
 The method is named **De**confounded **Fu**nctional **S**tructure **E**stimation (DeFuSE).
 
+<img src="defuse.png" alt="DeFuSE" width="400"/>
+
 ## Contents
 
 The simulations of DeFuSE are in Jupyter Notebooks:
