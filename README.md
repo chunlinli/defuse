@@ -16,7 +16,7 @@ The simulations of DeFuSE are in Jupyter Notebooks:
 
 - `./example_large.ipynb`: 50 simulations (random and hub graphs) when `p, n = 100, 500`.
 
-The implementation of DeFuSE is in directory  `./defuse`.
+The implementation of DeFuSE is in directory  `./defuse/`.
 
 - `./defuse/defuse.py`: defines `DeFuSE` class.
 
@@ -29,7 +29,7 @@ The implementation of DeFuSE is in directory  `./defuse`.
 - `./defuse/utils.py`: defines utility functions, including graph and data generating functions.
 
 
-The code of full simulations (including other methods) is in directory `./simulation`. 
+The code of full simulations (including other methods) is in directory `./simulation/`. 
 
 - `./simulation/data.py`: simulates data.
 
@@ -39,19 +39,19 @@ The code of full simulations (including other methods) is in directory `./simula
 
 - `./simulation/simulation.R`: conducts simulations for CAM [3], RFCI [4], and LRpS-GES [1].
 
-- `./simulation/Python`: 
+- `./simulation/Python/`: 
 
-    - `./simulation/Python/notears`: contains an implementation of NOTEARS. 
+    - `./simulation/Python/notears/`: contains an implementation of NOTEARS. 
 
-- `./simulation/R`: 
+- `./simulation/R/`: 
 
-    - `./simulation/R/methods`: contains R files defining a unified interface for CAM, RFCI, and LRpS-GES. 
+    - `./simulation/R/methods/`: contains R files defining a unified interface for CAM, RFCI, and LRpS-GES. 
 
     - `utils.R`: defines utility functions, including graph metrics. 
 
-- `./simulation/data`: stores simulated data.
+- `./simulation/data/`: stores simulated data.
 
-- `./simulation/results`: stores the simulation results. 
+- `./simulation/results/`: stores the simulation results. 
 
 ## Preliminaries
 ### Environments
