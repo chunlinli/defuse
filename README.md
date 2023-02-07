@@ -2,7 +2,7 @@
 
 This repository contains an implementation of the following paper 
 
-- Li, C., Shen, X., & Pan, W. (2022+). Nonlinear causal discovery with confounders. Submitted.
+- Li, C., Shen, X., & Pan, W. (2023). Nonlinear causal discovery with confounders. *Journal of the American Statistical Association*.
 
 The method is named **De**confounded **Fu**nctional **S**tructure **E**stimation (DeFuSE).
 
