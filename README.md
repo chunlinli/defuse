@@ -165,5 +165,5 @@ In addition, part of the simulation code is adapted from
 and 
 [Zheng's code](https://github.com/xunzheng/notears).
 
-**I would like to thank the authors of above open-sourced softwares.**
+**I would like to thank the authors of above open-sourced software.**
 
