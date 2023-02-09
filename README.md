@@ -124,10 +124,11 @@ NOTE: the complete simulations will take more than 100 hrs to complete.
 
 If you find the code useful, please consider citing 
 ```
-@article{
+@article{li2023nonlinear,
     author = {Chunlin Li, Xiaotong Shen, Wei Pan},
     title = {Nonlinear causal discovery with confounders},
-    year = {2022}
+    year = {2023},
+    journal={Journal of the American Statistical Association}
 }
 ```
 The code is maintained on [GitHub](https://github.com/chunlinli/defuse). 
